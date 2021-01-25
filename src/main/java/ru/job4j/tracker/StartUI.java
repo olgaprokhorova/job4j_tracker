@@ -10,5 +10,8 @@ public class StartUI {
         System.out.println(itemDateTime.format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
         Item item1 = new Item(1, "Ivan");
         System.out.println(item1);
+        Tracker tracker = new Tracker();
+        tracker.add(item);
+        System.out.println(tracker.findById(item.getId()));
     }
 }
