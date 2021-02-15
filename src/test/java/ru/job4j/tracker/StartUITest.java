@@ -13,7 +13,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(out),
                 new Exit(out)
@@ -25,7 +25,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
@@ -44,7 +44,7 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Deleted item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
@@ -65,7 +65,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new Exit(out)
         };
@@ -79,7 +79,7 @@ public class StartUITest {
     @Test
     public void whenShowAll() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Item item1 = tracker.add(new Item("First item"));
         Item item2 = tracker.add(new Item("Second item"));
         Input in = new StubInput(
@@ -106,7 +106,7 @@ public class StartUITest {
     @Test
     public void whenFindById() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find item"));
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(item.getId()), "1"}
@@ -131,7 +131,7 @@ public class StartUITest {
     @Test
     public void whenFindByIdNotFound() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Input in = new StubInput(
                 new String[] {"0", "2", "1"}
         );
@@ -155,7 +155,7 @@ public class StartUITest {
     @Test
     public void whenFindByName() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Found item"));
         Input in = new StubInput(
                 new String[]{"0", "Found item", "1"}
@@ -180,7 +180,7 @@ public class StartUITest {
     @Test
     public void whenFindByNameNotFound() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Input in = new StubInput(
                 new String[]{"0", "Other item", "1"}
         );
@@ -207,7 +207,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"7", "0"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new Exit(out)
         };
