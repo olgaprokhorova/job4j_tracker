@@ -41,6 +41,7 @@ public class BankService {
             for (Account a : userAccount) {
                 if (a.getRequisite().equals(requisite)) {
                     account = a;
+                    break;
                 }
             }
         }
