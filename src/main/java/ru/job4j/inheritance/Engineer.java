@@ -7,8 +7,10 @@ public class Engineer extends Profession {
     private boolean isWorkAtOffice;
     private int category;
 
-    public Engineer(String name, String surname, String education, LocalDate birthday, String specialization,
-                    boolean isWorkAtOffice, int category) {
+    public Engineer(
+            String name, String surname, String education, LocalDate birthday,
+            String specialization, boolean isWorkAtOffice, int category
+    ) {
         super(name, surname, education, birthday);
         this.specialization = specialization;
         this.isWorkAtOffice = isWorkAtOffice;
@@ -22,6 +24,4 @@ public class Engineer extends Profession {
     public void developProduct() {
 
     }
-
-
 }
