@@ -23,7 +23,7 @@ public class FreezeStr {
                 leftMap.put(l, leftMap.get(l) + 1);
             }
         }
-        for (char r : rightArr ) {
+        for (char r : rightArr) {
             if (!leftMap.containsKey(r) || leftMap.get(r) < 1) {
                 rsl = false;
                 break;
