@@ -1,11 +1,12 @@
 package ru.job4j.collection;
 
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.HashSet;
 
 public class Article {
     /**
      * Метод принимает на вход два текста. Из оригинального текста вырезают слова
-     * и составляют новый текст.
+     * и составляют из них новый текст.
      * @param origin оригинальный текст
      * @param line новый текст
      * @return возвращает true, если новый текст был получен из оригинального,
@@ -15,20 +16,11 @@ public class Article {
         boolean rsl = true;
         String[] originArr = origin.split("[., :;!]");
         String[] lineArr = line.split("[., :;!]");
-        HashMap<String, Integer> originText = new HashMap<>();
-        for (String o : originArr) {
-            if (!originText.containsKey(o)) {
-               originText.put(o, 1);
-            } else {
-                originText.put(o, originText.get(o) + 1);
-            }
-        }
+        HashSet<String> originText = new HashSet<>(Arrays.asList(originArr));
         for (String l : lineArr) {
-            if (!originText.containsKey(l) || originText.get(l) < 1) {
+            if (!originText.contains(l)) {
                 rsl = false;
                 break;
-            } else {
-                originText.put(l, originText.get(l) - 1);
             }
         }
         return rsl;

@@ -25,7 +25,7 @@ public class ArticleTest {
                         "Мама мыла раму и окно",
                         "мыла раму и раму"
                 ),
-                is(false)
+                is(true)
         );
     }
 
